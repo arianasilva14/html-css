@@ -13,12 +13,20 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
 
         td, th {
             border: 1px solid black;
             padding: 10px;
             
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: pink;
         }
 
         td.numero {
@@ -29,6 +37,18 @@
             background-color: gray;
             color: white;
         }
+
+        thead > tr > th {
+            position: sticky;
+            top: 0;
+            background-color: gray;
+            
+        }
+
+        tbody > tr:nth-child(2n) {
+            background-color: pink;
+        }
+
     </style>
 </head>
 <body>
@@ -36,6 +56,7 @@
     <!--
         ANATOMIA PARA TABELAS GRANDES
         TABLE
+            CAPTION
             THEAD
                 TR, TD, TH
             TBOODY
@@ -44,29 +65,42 @@
                 TR, TD, TH
     -->
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>São Paulo</td>
-                <td class="numero">45 919 049</td>
+                <td class="numero">45.919.049</td>
             </tr>
             <tr>
                 <td>Minas Gerais</td>
-                <td class="numero">21 168 791</td>
+                <td class="numero">21.168.791</td>
             </tr>
             <tr>
                 <td>Rio de Janeiro</td>
-                <td class="numero">17 264 943</td>
+                <td class="numero">17.264.943</td>
+            </tr>
+            <tr>
+                <td>Bahia</td>
+                <td class="numero">14.873.064</td>
+            </tr>
+            <tr>
+                <td>Paraná</td>
+                <td class="numero">11.433.957</td>
+            </tr>
+            <tr>
+                <td>Rio Grande do Sul</td>
+                <td class="numero">11.377.239</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="numero"><strong>84 352 783</strong></td>
             </tr>
         </tfoot>
